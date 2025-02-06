@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Welcome</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #1a1a1a, #333333); /* Blackish gradient */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    /* Container Styling */
+    .container {
+      background-color: rgba(0, 0, 0, 0.4); /* Semi-transparent black */
+      padding: 60px;
+      border-radius: 20px;
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.7);
+      text-align: center;
+      backdrop-filter: blur(15px);
+      width: 500px;
+      max-width: 90%;
+      animation: fadeIn 1.5s ease-in-out, bounce 2s infinite; /* Bounce effect */
+    }
+
+    /* Heading Styling */
+    h1 {
+      color: #fff;
+      margin-bottom: 40px;
+      font-size: 4em;
+      text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4); /* Subtle glow */
+      animation: glow 3s infinite alternate;
+    }
+
+    /* Glow Animation */
+    @keyframes glow {
+      0% {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 20px rgba(255, 255, 255, 0.6), 0 0 30px rgba(255, 255, 255, 0.4);
+      }
+      100% {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8), 0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4);
+      }
+    }
+
+    /* Link Styling */
+    a {
+      color: #00ffcc; /* Bright cyan for contrast */
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 40px;
+      display: inline-block;
+      padding: 20px 40px;
+      border: 2px solid #00ffcc;
+      border-radius: 15px;
+      transition: all 0.4s ease;
+      background-color: rgba(0, 255, 204, 0.1); /* Semi-transparent cyan */
+    }
+
+    a:hover {
+      background-color: rgba(0, 255, 204, 0.3); /* Brighter cyan on hover */
+      transform: scale(1.1);
+      box-shadow: 0 6px 12px rgba(0, 255, 204, 0.5);
+    }
+
+    /* Fade-In Animation */
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Bounce Animation */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-20px); /* Bounce up */
+      }
+    }
+
+    /* Responsive Design */
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 3em;
+      }
+
+      .container {
+        padding: 40px;
+      }
+
+      a {
+        padding: 15px 30px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome, <%= username %>!</h1>
+    <a href="/logout">Logout</a>
+  </div>
+</body>
+</html>
